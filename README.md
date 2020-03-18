@@ -28,9 +28,18 @@ trainds.boxplot(column='colname', by='othercolumn') #box plot of colname group b
 ```
 ### Bivariate analysis
 ```
-#use of pandas crosstab, div, axis=0, sum(1).astype('float')
+#use of pandas crosstab, div, axis=0, sum(1).astype('float'), plt.bar(stacked=True)
 genderbivariatedata = pd.crosstab(train_csv["Gender"], train_csv["Loan_Status"])
 genderbivariatedata.plot.bar()
 genderbivariatedata.plot.bar(stacked=True)
 genderbivariatedata.div(genderbivariatedata.sum(1).astype(float), axis=0).plot.bar(stacked=True)
+```
+
+```
+#use of pd.cut to form bins and groups
+bin = [0, 2500, 4000, 6000, 8000]
+groups = ['low','average','high','very high']
+train_csv['bindata'] = pd.cut(train_csv['ApplicantIncome'],bin, labels=groups)
+bivardata = pd.crosstab(train_csv['bindata'], train_csv['Loan_Status'])
+bivardata.div(bivardata.sum(1).astype('float'), axis=0).plot.bar(stacked=True)
 ```
