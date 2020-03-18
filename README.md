@@ -43,3 +43,13 @@ train_csv['bindata'] = pd.cut(train_csv['ApplicantIncome'],bin, labels=groups)
 bivardata = pd.crosstab(train_csv['bindata'], train_csv['Loan_Status'])
 bivardata.div(bivardata.sum(1).astype('float'), axis=0).plot.bar(stacked=True)
 ```
+```
+#use of drop amd replace
+train_csv=train_csv.drop(['bindata'], axis=1)
+train_csv['dependents'].replace('3+',3, inplace=1)
+```
+```
+#use of correlation and heatmap
+matrix = train_csv.corr()
+sns.heatmap(matrix, vmax=0.8, square=True, cmap="BuPu")
+```
