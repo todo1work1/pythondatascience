@@ -26,3 +26,11 @@ sns.distplot(df['colname'])
 
 trainds.boxplot(column='colname', by='othercolumn') #box plot of colname group by other columns
 ```
+### Bivariate analysis
+```
+#use of pandas crosstab, div, axis=0, sum(1).astype('float')
+genderbivariatedata = pd.crosstab(train_csv["Gender"], train_csv["Loan_Status"])
+genderbivariatedata.plot.bar()
+genderbivariatedata.plot.bar(stacked=True)
+genderbivariatedata.div(genderbivariatedata.sum(1).astype(float), axis=0).plot.bar(stacked=True)
+```
