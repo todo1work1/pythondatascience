@@ -62,3 +62,13 @@ sns.heatmap(matrix, vmax=0.8, square=True, cmap="BuPu")
 - ``` from sklearn.datasets import load_breast_cancer ```
 - **return_X_y=True** => parameter to return the features and response variable only
 - ``` features, target = load_breast_cancer(reaturn_X_y=True) ```
+
+
+### train a Random Forest model using sklearn APIs
+- from sklearn.**ensemble** import **RandomForestClassifier**
+- rfmodel = RandomForestClassifier(**random_state**=<seed-value>)
+  - random_state is a **Hyperparameter**
+- rfmodel.**fit**(features,target)
+- predictions = rfmodel.**predict**(features)
+- from sklearn.**metrics** import **accuracy_score**
+- accuracy_score(target, predictions)
