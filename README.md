@@ -1,5 +1,9 @@
 # pythondatascience
 My DataScience Python Learning
+### Pandas read_csv command param usage
+- pd.read_csv(url, **skiprows=no.ofrowstoskip**)
+- pd.read_csv(url, skiprows=1, **sep="\tor\nor,""**)
+
 ### Use of Pandas, matplotlib seaborn
 ```
 import pandas as pd
