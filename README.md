@@ -57,3 +57,8 @@ train_csv['dependents'].replace('3+',3, inplace=1)
 matrix = train_csv.corr()
 sns.heatmap(matrix, vmax=0.8, square=True, cmap="BuPu")
 ```
+### sklearn usage
+- from sklearn.**datasets** import datasetname
+- ``` from sklearn.datasets import load_breast_cancer ```
+- **return_X_y=True** => parameter to return the features and response variable only
+- ``` features, target = load_breast_cancer(reaturn_X_y=True) ```
